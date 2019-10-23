@@ -5356,46 +5356,46 @@ var numberToBN = __webpack_require__(2);
 var zero = new BN(0);
 var negative1 = new BN(-1);
 
-// complete ethereum unit map
+// complete kapoeum unit map
 var unitMap = {
-  'noether': '0', // eslint-disable-line
+  'nokapo': '0', // eslint-disable-line
   'wei': '1', // eslint-disable-line
   'kwei': '1000', // eslint-disable-line
   'Kwei': '1000', // eslint-disable-line
   'babbage': '1000', // eslint-disable-line
-  'femtoether': '1000', // eslint-disable-line
+  'femtokapo': '1000', // eslint-disable-line
   'mwei': '1000000', // eslint-disable-line
   'Mwei': '1000000', // eslint-disable-line
   'lovelace': '1000000', // eslint-disable-line
-  'picoether': '1000000', // eslint-disable-line
+  'picokapo': '1000000', // eslint-disable-line
   'gwei': '1000000000', // eslint-disable-line
   'Gwei': '1000000000', // eslint-disable-line
   'shannon': '1000000000', // eslint-disable-line
-  'nanoether': '1000000000', // eslint-disable-line
+  'nanokapo': '1000000000', // eslint-disable-line
   'nano': '1000000000', // eslint-disable-line
   'szabo': '1000000000000', // eslint-disable-line
-  'microether': '1000000000000', // eslint-disable-line
+  'microkapo': '1000000000000', // eslint-disable-line
   'micro': '1000000000000', // eslint-disable-line
   'finney': '1000000000000000', // eslint-disable-line
-  'milliether': '1000000000000000', // eslint-disable-line
+  'millikapo': '1000000000000000', // eslint-disable-line
   'milli': '1000000000000000', // eslint-disable-line
-  'ether': '1000000000000000000', // eslint-disable-line
-  'kether': '1000000000000000000000', // eslint-disable-line
+  'kapo': '1000000000000000000', // eslint-disable-line
+  'kkapo': '1000000000000000000000', // eslint-disable-line
   'grand': '1000000000000000000000', // eslint-disable-line
-  'mether': '1000000000000000000000000', // eslint-disable-line
-  'gether': '1000000000000000000000000000', // eslint-disable-line
-  'tether': '1000000000000000000000000000000' };
+  'mkapo': '1000000000000000000000000', // eslint-disable-line
+  'gkapo': '1000000000000000000000000000', // eslint-disable-line
+  'tkapo': '1000000000000000000000000000000' };
 
 /**
  * Returns value of unit in Wei
  *
  * @method getValueOfUnit
- * @param {String} unit the unit to convert to, default ether
+ * @param {String} unit the unit to convert to, default kapo
  * @returns {BigNumber} value of the unit (in Wei)
  * @throws error if the unit is not correct:w
  */
 function getValueOfUnit(unitInput) {
-  var unit = unitInput ? unitInput.toLowerCase() : 'ether';
+  var unit = unitInput ? unitInput.toLowerCase() : 'kapo';
   var unitValue = unitMap[unit]; // eslint-disable-line
 
   if (typeof unitValue !== 'string') {
@@ -5460,25 +5460,25 @@ function fromWei(weiInput, unit, optionsInput) {
   return value;
 }
 
-function toWei(etherInput, unit) {
-  var ether = numberToString(etherInput); // eslint-disable-line
+function toWei(kapoInput, unit) {
+  var kapo = numberToString(kapoInput); // eslint-disable-line
   var base = getValueOfUnit(unit);
   var baseLength = unitMap[unit].length - 1 || 1;
 
   // Is it negative?
-  var negative = ether.substring(0, 1) === '-'; // eslint-disable-line
+  var negative = kapo.substring(0, 1) === '-'; // eslint-disable-line
   if (negative) {
-    ether = ether.substring(1);
+    kapo = kapo.substring(1);
   }
 
-  if (ether === '.') {
-    throw new Error('[ethjs-unit] while converting number ' + etherInput + ' to wei, invalid value');
+  if (kapo === '.') {
+    throw new Error('[ethjs-unit] while converting number ' + kapoInput + ' to wei, invalid value');
   }
 
   // Split it into a whole and fractional part
-  var comps = ether.split('.'); // eslint-disable-line
+  var comps = kapo.split('.'); // eslint-disable-line
   if (comps.length > 2) {
-    throw new Error('[ethjs-unit] while converting number ' + etherInput + ' to wei,  too many decimal points');
+    throw new Error('[ethjs-unit] while converting number ' + kapoInput + ' to wei,  too many decimal points');
   }
 
   var whole = comps[0],
@@ -5491,7 +5491,7 @@ function toWei(etherInput, unit) {
     fraction = '0';
   }
   if (fraction.length > baseLength) {
-    throw new Error('[ethjs-unit] while converting number ' + etherInput + ' to wei, too many decimal places');
+    throw new Error('[ethjs-unit] while converting number ' + kapoInput + ' to wei, too many decimal places');
   }
 
   while (fraction.length < baseLength) {
@@ -5733,7 +5733,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 /***/ function(module, exports) {
 
 /**
- * Returns a `Boolean` on whether or not the a `String` starts with '0x'
+ * Returns a `Boolean` on whkapo or not the a `String` starts with '0x'
  * @param {String} str the string input value
  * @return {Boolean} a boolean if it is or is not hex prefixed
  * @throws if the str input is not a string
@@ -5833,4 +5833,4 @@ module.exports = function(module) {
 /******/ ])
 });
 ;
-//# sourceMappingURL=ethjs-unit.js.map
+//# sourceMappingURL=kapojs-unit.js.map
