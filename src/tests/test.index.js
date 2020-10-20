@@ -41,10 +41,10 @@ describe('toWei', () => {
   it('should handle edge cases', () => {
     assert.equal(units.toWei(0, 'wei').toString(10), '0');
     assert.equal(units.toWei('0.0', 'wei').toString(10), '0');
-    assert.equal(units.toWei('.3', 'kapo').toString(10), '300000000000000000');
+    assert.equal(units.toWei('.3', 'kappa').toString(10), '300000000000000000');
     assert.throws(() => units.toWei('.', 'wei'), Error);
-    assert.throws(() => units.toWei('1.243842387924387924897423897423', 'kapo'), Error);
-    assert.throws(() => units.toWei('8723.98234.98234', 'kapo'), Error);
+    assert.throws(() => units.toWei('1.243842387924387924897423897423', 'kappa'), Error);
+    assert.throws(() => units.toWei('8723.98234.98234', 'kappa'), Error);
   });
 
   it('should return the correct value', () => {
@@ -60,17 +60,17 @@ describe('toWei', () => {
     assert.equal(units.toWei(1, 'shannon').toString(10), '1000000000');
     assert.equal(units.toWei(1, 'szabo').toString(10), '1000000000000');
     assert.equal(units.toWei(1, 'finney').toString(10), '1000000000000000');
-    assert.equal(units.toWei(1, 'kapo').toString(10), '1000000000000000000');
-    assert.equal(units.toWei(1, 'kkapo').toString(10), '1000000000000000000000');
+    assert.equal(units.toWei(1, 'kappa').toString(10), '1000000000000000000');
+    assert.equal(units.toWei(1, 'kkappa').toString(10), '1000000000000000000000');
     assert.equal(units.toWei(1, 'grand').toString(10), '1000000000000000000000');
-    assert.equal(units.toWei(1, 'mkapo').toString(10), '1000000000000000000000000');
-    assert.equal(units.toWei(1, 'gkapo').toString(10), '1000000000000000000000000000');
-    assert.equal(units.toWei(1, 'tkapo').toString(10), '1000000000000000000000000000000');
+    assert.equal(units.toWei(1, 'mkappa').toString(10), '1000000000000000000000000');
+    assert.equal(units.toWei(1, 'gkappa').toString(10), '1000000000000000000000000000');
+    assert.equal(units.toWei(1, 'tkappa').toString(10), '1000000000000000000000000000000');
 
-    assert.equal(units.toWei(1, 'kwei').toString(10), units.toWei(1, 'femtokapo').toString(10));
-    assert.equal(units.toWei(1, 'szabo').toString(10), units.toWei(1, 'microkapo').toString(10));
-    assert.equal(units.toWei(1, 'finney').toString(10), units.toWei(1, 'millikapo').toString(10));
-    assert.equal(units.toWei(1, 'milli').toString(10), units.toWei(1, 'millikapo').toString(10));
+    assert.equal(units.toWei(1, 'kwei').toString(10), units.toWei(1, 'femtokappa').toString(10));
+    assert.equal(units.toWei(1, 'szabo').toString(10), units.toWei(1, 'microkappa').toString(10));
+    assert.equal(units.toWei(1, 'finney').toString(10), units.toWei(1, 'millikappa').toString(10));
+    assert.equal(units.toWei(1, 'milli').toString(10), units.toWei(1, 'millikappa').toString(10));
     assert.equal(units.toWei(1, 'milli').toString(10), units.toWei(1000, 'micro').toString(10));
 
     assert.throws(() => { units.toWei(1, 'wei1'); }, Error);
@@ -115,12 +115,12 @@ describe('fromWei', () => {
     assert.equal(units.fromWei(1000000000000000000, 'gwei'), '1000000000');
     assert.equal(units.fromWei(1000000000000000000, 'szabo'), '1000000');
     assert.equal(units.fromWei(1000000000000000000, 'finney'), '1000');
-    assert.equal(units.fromWei(1000000000000000000, 'kapo'), '1');
-    assert.equal(units.fromWei(1000000000000000000, 'kkapo'), '0.001');
+    assert.equal(units.fromWei(1000000000000000000, 'kappa'), '1');
+    assert.equal(units.fromWei(1000000000000000000, 'kkappa'), '0.001');
     assert.equal(units.fromWei(1000000000000000000, 'grand'), '0.001');
-    assert.equal(units.fromWei(1000000000000000000, 'mkapo'), '0.000001');
-    assert.equal(units.fromWei(1000000000000000000, 'gkapo'), '0.000000001');
-    assert.equal(units.fromWei(1000000000000000000, 'tkapo'), '0.000000000001');
+    assert.equal(units.fromWei(1000000000000000000, 'mkappa'), '0.000001');
+    assert.equal(units.fromWei(1000000000000000000, 'gkappa'), '0.000000001');
+    assert.equal(units.fromWei(1000000000000000000, 'tkappa'), '0.000000000001');
   });
 });
 

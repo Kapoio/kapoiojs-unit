@@ -1,7 +1,7 @@
 {
   "name": "kapoiojs-unit",
   "version": "0.1.6",
-  "description": "A simple module for handling Ethereum units (e.g. 'ether', 'wei', etc...)",
+  "description": "A simple module for handling Kapoio units (e.g. 'kappa', 'wei', etc...)",
   "main": "lib/index.js",
   "files": [
     "dist",
@@ -153,7 +153,7 @@
     "web3": "git+https://github.com/Kapoio/web3.js.git#1.x"
   },
   "keywords": [
-    "ethereum",
+    "kapoio",
     "encoding",
     "decoding"
   ],
@@ -192,7 +192,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/ethjs/ethjs-unit"
+    "url": "git://github.com/Kapoio/kapoiojs-unit"
   },
   "license": "MIT",
   "lint-staged": {

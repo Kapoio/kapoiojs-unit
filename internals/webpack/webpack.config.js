@@ -1,7 +1,7 @@
 var webpack = require('webpack'); // eslint-disable-line
 
 var env = process.env.NODE_ENV;   // eslint-disable-line
-var filename = 'ethjs-unit';      // eslint-disable-line
+var filename = 'kapoiojs-unit';      // eslint-disable-line
 var library = 'ethUnit';          // eslint-disable-line
 var config = {                    // eslint-disable-line
   module: {
